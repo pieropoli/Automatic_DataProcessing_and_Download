@@ -1,5 +1,7 @@
 clear
-
+% This script create an output sh file needed to run bspyDMT and retireve
+% the data for a given event, for which the refeence time is not available
+% (Yet!)
 
 %% script to atumatically download data using the USGS mail informations
 disp('try to input the t0 of the event instead...')
@@ -7,6 +9,7 @@ disp('try to input the t0 of the event instead...')
 timeBeforeEvent=5; %in minutes
 timeAfterEvent = 30; %in minutes
 
+%% information about the event
 % this should be parsed automatically from the mail
 year = 2015;
 month=7;
@@ -20,9 +23,8 @@ depth=118;
 mag=6.3;
 region='ALASKA';
 
+
 %% here build t0 and t1 string to put on the script
-
-
 
 T0 = datenum([year,month,day,t0hour,t0min,t0sec]);
 t0 = addtodate(T0,-timeBeforeEvent,'minute');
